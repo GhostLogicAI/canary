@@ -22,7 +22,7 @@ echo "[2/3] Building Canary..."
 python3 -m PyInstaller --noconfirm --onefile \
     --name "Canary" \
     --add-data "config.yaml:." \
-    --add-data "canary@ghostlogic.tech.png:." \
+    --add-data "death_screen.png:." \
     --hidden-import PIL \
     --hidden-import PIL.Image \
     --hidden-import PIL.ImageTk \

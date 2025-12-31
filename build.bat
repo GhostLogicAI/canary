@@ -23,7 +23,6 @@ pyinstaller --noconfirm --onefile --windowed ^
     --icon "canary.ico" ^
     --add-data "config.yaml;." ^
     --add-data "death_screen.png;." ^
-    --add-data "*.py;." ^
     --hidden-import PIL ^
     --hidden-import PIL.Image ^
     --hidden-import PIL.ImageTk ^
