@@ -1,0 +1,81 @@
+scan:
+  interval_seconds: 10
+  parallel_workers: 4
+  first_run_batch_signals: true
+baseline:
+  aging_days: 30
+  frequency_tracking: true
+  time_of_day_awareness: true
+  anomaly_threshold: 3.0
+network:
+  spike_multiplier: 3.0
+  min_baseline_samples: 5
+  history_size: 20
+  beaconing_min_connections: 3
+  beaconing_jitter_tolerance: 0.1
+process:
+  track_command_lines: true
+  suspicious_parents:
+  - WINWORD.EXE
+  - EXCEL.EXE
+  - POWERPNT.EXE
+  - chrome.exe
+  - firefox.exe
+  - msedge.exe
+  - outlook.exe
+  suspicious_children:
+  - cmd.exe
+  - powershell.exe
+  - pwsh.exe
+  - wscript.exe
+  - cscript.exe
+  - mshta.exe
+  - regsvr32.exe
+  - rundll32.exe
+filesystem:
+  watch_paths:
+  - C:\Windows\System32
+  - C:\Windows\Temp
+  watch_extensions:
+  - .exe
+  - .dll
+  - .sys
+  - .scr
+  - .bat
+  - .cmd
+  - .ps1
+  - .vbs
+  - .js
+  include_user_paths: true
+dns:
+  suspicious_tlds:
+  - .xyz
+  - .top
+  - .tk
+  - .ml
+  - .ga
+  - .cf
+  - .gq
+  - .pw
+  - .cc
+  - .su
+  - .onion
+  dga_entropy_threshold: 3.5
+alert:
+  sound_enabled: true
+  sound_file: null
+  snooze_duration_hours: 24
+  max_bubbles: 5
+  bubble_duration_ms: 8000
+ui:
+  system_tray_mode: false
+  start_minimized: false
+  notification_center_max_items: 500
+  dark_theme: true
+  color_mode: gradient
+watchdog:
+  enabled: true
+  check_interval_seconds: 30
+  restart_on_failure: true
+  remote_heartbeat_url: null
+  heartbeat_interval_minutes: 5

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\adamt\\\\Desktop\\\\canary\\\\'' -Filter ''*.png'' | Sort-Object LastWriteTime -Descending | Select-Object Name, Length, LastWriteTime | Format-Table -AutoSize\")"
+    ]
+  }
+}

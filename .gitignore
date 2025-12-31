@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+*.egg-info/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Canary runtime
+*.db
+*.db-journal
+baseline.json
+canary_log.txt
+signals.json
+
+# Sensitive
+*.pem
+*.key
+.env
