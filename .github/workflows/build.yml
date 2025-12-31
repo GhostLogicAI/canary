@@ -44,7 +44,7 @@ jobs:
           pyinstaller --noconfirm --onefile --windowed \
             --name "Canary" \
             --add-data "config.yaml${{ runner.os == 'Windows' && ';' || ':' }}." \
-            --add-data "canary@ghostlogic.tech.png${{ runner.os == 'Windows' && ';' || ':' }}." \
+            --add-data "death_screen.png${{ runner.os == 'Windows' && ';' || ':' }}." \
             --hidden-import PIL \
             --hidden-import PIL.Image \
             --hidden-import PIL.ImageTk \

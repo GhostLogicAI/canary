@@ -22,7 +22,7 @@ pyinstaller --noconfirm --onefile --windowed ^
     --name "Canary" ^
     --icon "canary.ico" ^
     --add-data "config.yaml;." ^
-    --add-data "canary@ghostlogic.tech.png;." ^
+    --add-data "death_screen.png;." ^
     --add-data "*.py;." ^
     --hidden-import PIL ^
     --hidden-import PIL.Image ^
