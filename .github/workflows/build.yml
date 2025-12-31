@@ -40,14 +40,21 @@ jobs:
           pip install pyinstaller pillow psutil pyyaml
 
       - name: Build executable
+        shell: bash
         run: |
+          SEP=":"
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            SEP=";"
+          fi
           pyinstaller --noconfirm --onefile --windowed \
             --name "Canary" \
-            --add-data "config.yaml${{ runner.os == 'Windows' && ';' || ':' }}." \
-            --add-data "death_screen.png${{ runner.os == 'Windows' && ';' || ':' }}." \
+            --add-data "config.yaml${SEP}." \
+            --add-data "death_screen.png${SEP}." \
             --hidden-import PIL \
             --hidden-import PIL.Image \
             --hidden-import PIL.ImageTk \
+            --hidden-import tkinter \
+            --collect-all tkinter \
             canary_ui.py
 
       - name: Upload artifact
